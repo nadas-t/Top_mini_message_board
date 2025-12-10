@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+  </head>
+  <body>
+    <h1>Welcome!</h1>
+    <p>This is the index route.</p>
+    <a href="/new"><button>Add New Message</button></a>
+    <ul>
+      <% messages.forEach((message,index) => { %>
+      <div>
+        <li><strong><%= message.user %>:</strong> <%= message.text %></li>
+        <li>date: <%= message.added.toLocaleString() %></li>
+        <a href="/messages/<%= index %>">View Message</a>
+      </div>
+      <% }); %>
+    </ul>
+  </body>
+</html>
